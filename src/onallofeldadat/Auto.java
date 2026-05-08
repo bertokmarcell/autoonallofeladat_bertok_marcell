@@ -13,5 +13,19 @@ public class Auto {
         this.ossz = ossz;
         this.fiz = fiz;
     }
+
+    public String getRsz() {
+        return rsz;
+    }
+    public int getIdo() {
+        return ido;
+    }
+    public float getOssz() {
+        return ossz;
+    }
+    public Enum getFiz() {
+        return fiz;
+    }
+    
     
 }
