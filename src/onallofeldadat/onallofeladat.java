@@ -21,11 +21,46 @@ public class onallofeladat {
             Auto auto = new Auto(rsz,ido,ossz,fsz);
             autok.add(auto);
         }
+        
+        mindenfel_Kiveve_A_Nyolcas();
+        
+        /*mindenfel();*/ 
+        /* ^ Csolti Tanár Úr , ez a metódus meghívja a nyolcas feladatot ami kiírja az összes kocsit, mind a százat */
+        
+    }
+    private static void mindenfel(){
         felegy();
+        elvalaszto();
         felket();
+        elvalaszto();
         felhar();
+        elvalaszto();
         felneg();
+        elvalaszto();
         felot();
+        elvalaszto();
+        felhat();
+        elvalaszto();
+        felhet();
+        elvalaszto();
+        felnyol();
+    }
+    
+    private static void mindenfel_Kiveve_A_Nyolcas(){
+        felegy();
+        elvalaszto();
+        felket();
+        elvalaszto();
+        felhar();
+        elvalaszto();
+        felneg();
+        elvalaszto();
+        felot();
+        elvalaszto();
+        felhat();
+        elvalaszto();
+        felhet();
+        
     }
 
     private static void felegy() {
@@ -84,6 +119,61 @@ public class onallofeladat {
     }
 
     private static void felot() {
+    int kartyas = 0, keszpenz = 0, utalas = 0, csekk = 0;
+    final int N = autok.size();
+    for(int i = 0; i < N; i++) {
+        Enum fiz = autok.get(i).getFiz();
+        if(null != fiz) switch (fiz) {
+            case KARTYAS:
+                kartyas++;
+                break;
+            case KESZPENZ:
+                keszpenz++;
+                break;
+            case UTALAS:
+                utalas++;
+                break;
+            case CSEKK:
+                csekk++;
+                break;
+            default:
+                break;
+        }
+    }
+    System.out.println("5.: minden fizetési mód meghatározott:");
+    System.out.println("  KARTYAS: "+ kartyas);
+    System.out.println("  KESZPENZ: "+ keszpenz);
+    System.out.println("  UTALAS: " +utalas);
+    System.out.println("  CSEK: " +csekk);
+    }
+    private static void elvalaszto(){
+        
+        System.out.println("-----------------------------------------");
+        
+    }
+    private static void felhat(){
+        /*autocount*/
+        java.util.Set<String> rszam =new java.util.HashSet<>();
+        for(Auto auto : autok) {
+            rszam.add(auto.getRsz());
+        }
+        System.out.println("kul rendszam : "+ rszam.size());
+    }
+    private static void felhet(){
+    java.util.Set<Enum> kul =new java.util.HashSet<>();
+    int N = autok.size();
+    for(int i = 0; i < N; i++) {
+        kul.add(autok.get(i).getFiz());
+    }
+    System.out.println("fizetesi mod szam: " +kul.size());
+    }
+    private static void felnyol(){
+        int i =0;
+        final int N=autok.size();
+        while(i<N){
+            System.out.println("renszam : "+autok.get(i).getOssz() + "ment : "+autok.get(i).getIdo());
+            i++;
+        }
         
     }
 
